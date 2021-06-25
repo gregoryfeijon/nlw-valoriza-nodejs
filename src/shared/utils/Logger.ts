@@ -19,6 +19,7 @@ const customLevels = {
     },
 };
 
+//TODO: Melhorar o formatter
 const formatter = winston.format.combine(
     winston.format.colorize(),
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
