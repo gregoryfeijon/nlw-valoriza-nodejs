@@ -6,6 +6,7 @@ import { router } from "./routes";
 
 import "./database";
 import { errorHandler } from "./shared/utils/ErrorHandler";
+import { BaseError } from "./exceptions/BaseError";
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(async (err: Error, request: Request, response: Response, next: NextFunct
         });
     }
     await errorHandler.handleError(err);
-    return response.status(400).json({
+    return response.status((err as BaseError).httpCode).json({
         error: err.message
     });
 });
