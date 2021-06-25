@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { User } from "../entities/User";
+import { HTTP400Error } from "../exceptions/HTTP400Error";
 import { UserRepository } from "../repositories/UserRepository";
 
 interface IUserRequest {
@@ -14,13 +14,13 @@ class CreateUserService {
         const userRepository = getCustomRepository(UserRepository);
 
         if (!email) {
-            throw new Error("Invalid email");
+            throw new HTTP400Error("Invalid email");
         }
 
         const userAlreadyExists = await userRepository.findOne({ email });
 
         if (userAlreadyExists) {
-            throw new Error("User already exists!");
+            throw new HTTP400Error("User already exists!");
         }
 
         const user = userRepository.create({ name, email, admin });
