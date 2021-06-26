@@ -15,13 +15,13 @@ app.use(express.json());
 app.use(router);
 
 app.use(async (err: Error, request: Request, response: Response, next: NextFunction) => {
+    await errorHandler.handleError(err);
     if (!errorHandler.isTrustedError(err)) {
         return response.status(500).json({
             status: "error",
             message: "Internal Server Error"
         });
     }
-    await errorHandler.handleError(err);
     return response.status((err as BaseError).httpCode).json({
         error: err.message
     });
