@@ -1,0 +1,169 @@
+//========================== TYPESCRIPT
+
+	//=============== Aula 1
+	
+		-> INTERFACE: DEFINE UM CONTRATO, UMA TIPAGEM PARA O ESCOPO DAQUELE OBJETO;
+	
+		-> CLASS: ATUA COMO UM OBJECT FACTORY REALMENTE, PERMITE INSTANCIAR O OBJETO E DEMAIS IMPLEMENTAÇÕES;
+		
+
+	//========================== NLW-VALORIZA
+
+
+		-> TODA VEZ QUE TIVER ... ANTES DO FROM DE UMA LIB, É PQ É NECESSÁRIO IMPORTAR TAMBÉM A TIPAGEM DELA!!
+		
+			-> NORMALMENTE, O NOME DA TIPAGEM É: @types/"nome_da_lib"
+			
+		
+		código: #together
+	
+
+	
+	//=============== Aula 2
+	
+		/**
+		 * Tipos de parâmetros trabalhados nas requisições
+		 * 
+		 * Routes Params=> http://localhost:3000/produtos/2893198129
+		 * 
+		 * Query Params=> http://localhost:3000/produtos?name=teclado&description=tecladobom 
+		 * 
+		 * Body Params=> { "name": "teclado", "description": "tecladobom" }
+		 */
+	
+		-> CONEXÃO COM O BANCO:
+		
+			-> DRIVER NATIVO;
+			
+			-> LIBS AUXILIARES - EX: KNEX.JS;
+			
+			-> FRAMEWORKS ORM - EX: SEQUELIZE, TYPEORM, PRISMA;
+			
+		
+		-> UTILIZADO NO PROJETO: TYPEORM
+		
+			-> NECESSÁRIO CRIAR UM ARQUIVO DE CONFIGURAÇÃO, QUE PODE SER DO TIPO JSON, JS, VARIÁVEL DE AMBIENTE (ARQUIVO .env) OU XML, VAI DO GOSTO DE QUEM ESTIVER UTILIZANDO!!
+		
+			-> COMANDOS:
+			
+			- yarn typeorm migration:create -n CreateUsers
+			
+				. Comando utilizado para criar o arquivo da migration, que nada mais é que uma série de comandos de criação de base de dados que você pode especificar, a fim de manter um padrão de criação para todos os desenvolvedores que trabalharem na API;
+			
+			- yarn typeorm migration:run
+			
+				. Comando utilizado para executar as migrations da base de dados em questão;
+				
+			- yarn typeorm migration:revert
+			
+				. Comando que pode ser utilizado para reverter versões de migrations. Sempre reverte 1!!
+				
+			- yarn typeorm entity:create -n User
+			
+				. Comando que pode ser utilizado para gerar automaticamente a entidade a partir de uma migration, ou vice versa ???? - confirmar info se é possível mapear o objeto e gerar a migration a partir dele!!
+				
+		
+		código: #unidade
+		
+		
+		
+	//=============== Aula 3
+	
+		-> Tratamento de erro via middleware:
+		
+			-> Adiciona um app.use com o tratamento do erro;
+			
+			-> Para tratar erro dentro de um método async usando express, necessário adicionar a lib:
+			
+				- yarn add express-async-error
+				
+		-> middlewares: São interceptadores das requisições. Podem ser utilizado, por exemplo, no controle de acesso a uma URL.
+		
+		código: #embuscadeevolução
+		
+		
+	
+	//=============== Aula 4
+	
+		-> JWT - Json Web Token
+		
+			- UM TOKEN QUE, APÓS ENCRYPTADO, É DIVIDIDO EM 3 PARTES, SEPARADAS POR .
+			
+				. 1ª PARTE: TIPO DE ENCRYPT USADO;
+				
+				. 2ª PARTE: PAYLOAD;
+				
+				. 3ª PARTE: LÓGICA PARA VERIFICAÇÃO SE O TOKEN É VÁLIDO;
+				
+				
+		-> GERAR HASH MD5 PARA O JWT:
+		
+			- https://www.md5hashgenerator.com/
+				
+		-> CRIAR FOREIGN KEY NO TYPEORM:
+		
+			ARRAY:
+			foreignKeys: [
+				{
+					name: "FK_NOME_QUE_FAÇA_SENTIDO",
+					referencedTableName: "NOME_DA_TABELA_REFERENCIADA",
+					referencedColumnNames: ['NOME_DA_COLUNA_REFERENCIADA'],
+					coumnNames: ['NOME_DA_COLUNA_QUE_É_A_FOREIGN_KEY'],
+					onDelete: "RESTRICT/SET NULL/OUTROS",
+					onUpdate: "RESTRICT/SET NULL/OUTROS"
+				}
+			];
+			
+			OU
+			
+			await queryRunner.createForeignKey(
+				"NOME_DA_TABELA",
+				new TableForeignKey({})
+			);
+			
+			
+		#legacy
+		
+	
+	
+	//=============== Aula 5
+	
+		-> TRABALHANDO COM O TOKEN DE AUTENTICAÇÃO DENTRO DA HEADER:
+		
+			- SERIA NECESSÁRIO O FRONT-END USAR A REQUEST DE AUTENTICAÇÃO NA API E OBTER O TOKEN;
+			
+			- APÓS OBTER O TOKEN, SERIA NECESSÁRIO INSERÍ-LO NO HEADER DA REQUISIÇÃO, UTILIZANDO A TAG AUTHORIZATION E O VALUE BEARER + TOKEN;
+			
+			- PARA VERIFICAR NAS REQUISIÇÕES SE ESTÁ AUTENTICADO, NECESSÁRIO UTILIZAR UM MIDDLEWARE E VERIFICAR SE O TOKEN É VÁLIDO;
+			
+			- NESSA APLICAÇÃO, APÓS VERIFICAR SE O TOKEN É VÁLIDO, É OBTIDO O ID DO USUÁRIO DO PAYLOAD DO TOKEN E ADICIONADO COMO ATRIBUTO DA REQUISIÇÃO PARA PASSAR À DIANTE NA APLICAÇÃO;
+			
+				. NECESSÁRIO CRIAR UM ATRIBUTO DA REQUISIÇÃO SOBRESCREVENDO O @types/express, DA FORMA QUE ESTÁ NO PACKAGE ./src/@types/express;
+				
+			//Funcionaria para adicionar # na frente do name de cada tag
+			let tagsTeste = await tagRepository.find();
+			tagsTeste = tags.map((tag) => ({ ...tag, nameCustom: `#${tag.name}` }));
+			
+			
+			***class-transformer - lib interessante para expor e excluir informações de retorno da api;
+			
+			- PARA EXPOR A API PARA UM ENDPOINT FRONT-END, PRECISA ADICIONAR O CORS!!!
+			
+	
+	
+	
+	--MILHAS EXTRAS:
+
+		. SERVIÇO DE E-MAIL PARA ENVIAR AVISO AO USUÁRIO QUE RECEBEU O ELOGIO;
+		
+		. COLOCAR EM PRODUÇÃO;
+		
+		. CRIAR UM FRONT-END PARA A API;
+		
+		. MUDAR O BANCO DE DADOS PRO MYSQL;
+		
+		. CRIAR OUTROS TIPOS DE CONSULTAS;
+		
+		. ADICIONAR O SENTRY;
+				
+			
