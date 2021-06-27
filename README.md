@@ -24,3 +24,7 @@ Projeto desenvolvido durante o evento NLW (Next Level Week), oferecido pela Rock
     [ X ] Não é permitido cadastrar elogios para usuários inválidos;
 
     [ X ] O usuário precisa estar autenticado na aplicação.
+
+link da collection das requisições para testar no postman: https://www.getpostman.com/collections/f28734b57b97368d671c
+
+arquivo com anotações sobre a aula: [anotações](https://github.com/gregoryfeijon/nlw-valoriza-nodejs/blob/main/anotacoes-nlw-valoriza.txt)
