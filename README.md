@@ -19,8 +19,8 @@ Projeto desenvolvido durante o evento NLW (Next Level Week), oferecido pela Rock
 
 - Cadastro de elogios
 
-    [ ] Não é permitido um usuário cadastrar um elogio para sí;
+    [ X ] Não é permitido um usuário cadastrar um elogio para sí;
 
-    [ ] Não é permitido cadastrar elogios para usuários inválidos;
+    [ X ] Não é permitido cadastrar elogios para usuários inválidos;
 
-    [ ] O usuário precisa estar autenticado na aplicação.
+    [ X ] O usuário precisa estar autenticado na aplicação.
