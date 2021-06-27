@@ -122,7 +122,7 @@
 			);
 			
 			
-		#legacy
+		código: #legacy
 		
 	
 	
@@ -149,7 +149,10 @@
 			
 			- PARA EXPOR A API PARA UM ENDPOINT FRONT-END, PRECISA ADICIONAR O CORS!!!
 			
-	
+		
+		código: juntos no próximo nível
+		
+		link das requisições no postman: https://www.getpostman.com/collections/f28734b57b97368d671c
 	
 	
 	--MILHAS EXTRAS:
