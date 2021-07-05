@@ -1,5 +1,6 @@
-import { NextFunction, request, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
+import { JWT_SECRET_KEY } from "../config";
 
 interface IPayload {
     sub: string;
@@ -22,7 +23,7 @@ export function ensureAuthenticated(
     try {
         const { sub } = verify(
             token,
-            "eb3df084201994c2d9f7724f989d00d7"
+            JWT_SECRET_KEY
         ) as IPayload;
 
         req.user_id = sub;

@@ -3,6 +3,7 @@ import { HTTP400Error } from "../exceptions/HTTP400Error";
 import { UserRepository } from "../repositories/UserRepository";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
+import { JWT_SECRET_KEY } from "../config";
 
 interface IAuthenticateUserRequest {
     email: string;
@@ -30,7 +31,7 @@ class AuthenticateUserService {
 
         const token = sign({
             email: user.email
-        }, "eb3df084201994c2d9f7724f989d00d7", {
+        }, JWT_SECRET_KEY, {
             subject: user.id,
             expiresIn: "1d"
         });
