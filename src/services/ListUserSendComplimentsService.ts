@@ -1,4 +1,5 @@
 import { getCustomRepository } from "typeorm";
+import { HTTP404Error } from "../exceptions/HTTP404Error";
 import { ComplimentRepository } from "../repositories/ComplimentRepository";
 
 class ListUserSendComplimentsService {
@@ -14,6 +15,10 @@ class ListUserSendComplimentsService {
             relations: ['userSender', 'userReceiver', 'tag'],
         }
         );
+
+        if (!compliments) {
+            throw new HTTP404Error("No compliments found.");
+        }
 
         return compliments;
     }

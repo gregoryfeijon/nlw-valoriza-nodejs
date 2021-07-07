@@ -1,9 +1,6 @@
 import { getCustomRepository } from "typeorm";
+import { HTTP404Error } from "../exceptions/HTTP404Error";
 import { ComplimentRepository } from "../repositories/ComplimentRepository";
-
-interface IListUserReceiveRequest {
-    compliments: []
-}
 
 class ListUserReceiveComplimentsService {
 
@@ -16,6 +13,10 @@ class ListUserReceiveComplimentsService {
             }
         }
         );
+
+        if (!compliments) {
+            throw new HTTP404Error("No compliments found.");
+        }
 
         return compliments;
     }
