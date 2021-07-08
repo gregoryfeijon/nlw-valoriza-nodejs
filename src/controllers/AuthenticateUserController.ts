@@ -3,7 +3,7 @@ import { AuthenticateUserService } from "../services/AuthenticateUserService";
 
 class AuthenticateUserController {
 
-    async handle(req: Request, response: Response) {
+    async handle(req: Request, res: Response) {
         const { email, password } = req.body;
 
         const authenticateUserService = new AuthenticateUserService();
@@ -13,7 +13,7 @@ class AuthenticateUserController {
             password
         });
 
-        return response.json(token);
+        return res.json(token);
     }
 }
 

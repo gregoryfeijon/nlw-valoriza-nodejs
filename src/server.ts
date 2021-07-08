@@ -24,14 +24,15 @@ app.use(router);
 app.use(async (err: Error, request: Request, response: Response, next: NextFunction) => {
     await errorHandler.handleError(err);
     if (!errorHandler.isTrustedError(err)) {
-        return response.status(500).json({
+        response.status(500).json({
             status: "error",
             message: "Internal Server Error"
         });
     }
-    return response.status((err as BaseError).httpCode).json({
+    response.status((err as BaseError).httpCode).json({
         error: err.message
     });
+    next(err);
 });
 
 app.listen(3000, () => console.log("Server is running"));
