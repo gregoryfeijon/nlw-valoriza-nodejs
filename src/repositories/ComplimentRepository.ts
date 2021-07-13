@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from "typeorm";
-import { Compliment } from "../entities/Compliments";
+import { Compliment } from "@entities/Compliments";
 
 @EntityRepository(Compliment)
 class ComplimentRepository extends Repository<Compliment> {

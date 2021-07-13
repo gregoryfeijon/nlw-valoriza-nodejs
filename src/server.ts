@@ -8,8 +8,8 @@ import * as swaggerDocs from "../swagger.json";
 import { router } from "./routes";
 
 import "./database";
-import { errorHandler } from "./shared/utils/ErrorHandler";
-import { BaseError } from "./exceptions/BaseError";
+import { errorHandler } from "@utils/ErrorHandler";
+import { BaseError } from "@exceptions/BaseError";
 
 const app = express();
 

@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
-import { HTTP400Error } from "../exceptions/HTTP400Error";
-import { ComplimentRepository } from "../repositories/ComplimentRepository";
-import { UserRepository } from "../repositories/UserRepository";
+import { HTTP400Error } from "@exceptions/HTTP400Error";
+import { ComplimentRepository } from "@repositories/ComplimentRepository";
+import { UserRepository } from "@repositories/UserRepository";
 
 interface IComplimentRequest {
     tag_id: string;

@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
 import { hash } from "bcryptjs";
-import { HTTP400Error } from "../exceptions/HTTP400Error";
-import { UserRepository } from "../repositories/UserRepository";
+import { HTTP400Error } from "@exceptions/HTTP400Error";
+import { UserRepository } from "@repositories/UserRepository";
 
 interface IUserRequest {
     name: string;

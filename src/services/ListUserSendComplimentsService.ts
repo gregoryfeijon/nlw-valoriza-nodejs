@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import { HTTP404Error } from "../exceptions/HTTP404Error";
-import { ComplimentRepository } from "../repositories/ComplimentRepository";
+import { HTTP404Error } from "@exceptions/HTTP404Error";
+import { ComplimentRepository } from "@repositories/ComplimentRepository";
 
 class ListUserSendComplimentsService {
 

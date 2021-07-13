@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
-import { TagRepository } from "../repositories/TagRepository";
+import { TagRepository } from "@repositories/TagRepository";
 import { classToPlain } from "class-transformer";
-import { HTTP404Error } from "../exceptions/HTTP404Error";
+import { HTTP404Error } from "@exceptions/HTTP404Error";
 
 
 class ListTagsService {

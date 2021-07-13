@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import { HTTP404Error } from "../exceptions/HTTP404Error";
-import { UserRepository } from "../repositories/UserRepository";
+import { HTTP404Error } from "@exceptions/HTTP404Error";
+import { UserRepository } from "@repositories/UserRepository";
 
 class GetUserByEmailService {
     async execute(email: string) {

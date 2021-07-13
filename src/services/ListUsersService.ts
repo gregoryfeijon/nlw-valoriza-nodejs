@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
-import { UserRepository } from "../repositories/UserRepository";
+import { UserRepository } from "@repositories/UserRepository";
 import { classToPlain } from "class-transformer";
-import { HTTP404Error } from "../exceptions/HTTP404Error";
+import { HTTP404Error } from "@exceptions/HTTP404Error";
 
 
 class ListUsersService {

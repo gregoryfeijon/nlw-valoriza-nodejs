@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import { HTTP400Error } from "../exceptions/HTTP400Error";
-import { UserRepository } from "../repositories/UserRepository";
+import { HTTP400Error } from "@exceptions/HTTP400Error";
+import { UserRepository } from "@repositories/UserRepository";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { JWT_SECRET_KEY } from "../config";

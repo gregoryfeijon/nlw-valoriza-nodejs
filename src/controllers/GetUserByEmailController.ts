@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetUserByEmailService } from "../services/GetUserByEmailService";
+import { GetUserByEmailService } from "@services/GetUserByEmailService";
 
 class GetUserByEmailController {
 

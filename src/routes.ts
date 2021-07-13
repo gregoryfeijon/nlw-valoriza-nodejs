@@ -1,15 +1,15 @@
 import { Router } from "express";
-import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
-import { CreateComplimentController } from "./controllers/CreateComplimentController";
-import { CreateTagController } from "./controllers/CreateTagController";
-import { CreateUserController } from "./controllers/CreateUserController";
-import { GetUserByEmailController } from "./controllers/GetUserByEmailController";
-import { ListTagsController } from "./controllers/ListTagsController";
-import { ListUserReceiveComplimentsController } from "./controllers/ListUserReceiveComplimentsController";
-import { ListUsersController } from "./controllers/ListUsersController";
-import { ListUserSendComplimentsController } from "./controllers/ListUserSendComplimentsController";
-import { ensureAdmin } from "./middlewares/ensureAdmin";
-import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
+import { AuthenticateUserController } from "@controllers/AuthenticateUserController";
+import { CreateComplimentController } from "@controllers/CreateComplimentController";
+import { CreateTagController } from "@controllers/CreateTagController";
+import { CreateUserController } from "@controllers/CreateUserController";
+import { GetUserByEmailController } from "@controllers/GetUserByEmailController";
+import { ListTagsController } from "@controllers/ListTagsController";
+import { ListUserReceiveComplimentsController } from "@controllers/ListUserReceiveComplimentsController";
+import { ListUsersController } from "@controllers/ListUsersController";
+import { ListUserSendComplimentsController } from "@controllers/ListUserSendComplimentsController";
+import { ensureAdmin } from "@middlewares/ensureAdmin";
+import { ensureAuthenticated } from "@middlewares/ensureAuthenticated";
 
 const router = Router();
 

@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import { HTTP400Error } from "../exceptions/HTTP400Error";
-import { TagRepository } from "../repositories/TagRepository";
+import { HTTP400Error } from "@exceptions/HTTP400Error";
+import { TagRepository } from "@repositories/TagRepository";
 
 interface ITagRequest {
     name: string;

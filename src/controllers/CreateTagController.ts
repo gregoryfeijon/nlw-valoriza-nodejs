@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateTagService } from "../services/CreateTagService";
+import { CreateTagService } from "@services/CreateTagService";
 
 class CreateTagController {
 

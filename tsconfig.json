@@ -11,7 +11,17 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "removeComments": true
+    "removeComments": true,
+    "baseUrl": ".",
+    "paths": {
+      "@controllers/*": ["./src/controllers/*"],
+      "@services/*": ["./src/services/*"],
+      "@repositories/*":["./src/repositories/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@utils/*": ["./src/shared/utils/*"],
+      "@exceptions/*": ["./src/exceptions/*"]
+    }
   },
   "include": [
     "src/**/*"
